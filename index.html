@@ -24,6 +24,7 @@
             font-style: italic;
             color: #000;
             margin-bottom: 10px;
+            text-align: center; /* Añadido para centrar el título */
         }
 
         .subtext {
@@ -77,19 +78,40 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 10px;
         }
 
         .header-links {
             display: flex;
             justify-content: flex-end;
-            gap: 10px;
+            align-items: center;
+            gap: 10px; /* Separación entre los links */
+        }
+
+        .header-links h3 {
+            margin: 0;
+            display: inline-block;
+            border: 1px solid #8B0000;
+            padding: 5px 10px;
+        }
+
+        .header-links h3:not(:last-child) {
+            margin-right: 5px;
         }
 
         .description {
             text-align: center;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
             margin-top: 20px;
+        }
+
+        .slogan {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+            margin-top: 10px;
         }
 
         .login-button {
@@ -99,15 +121,50 @@
 
         .image-container {
             display: flex;
+            justify-content: space-around;
             align-items: center;
-            justify-content: flex-end;
             margin-top: 10px;
         }
 
         .image-container img {
-            width: 200px;
-            height: auto;
-            margin-left: 10px;
+            max-width: 100%;
+            max-height: 200px;
+            margin: 10px;
+            border: 1px solid #8B0000; /* Añadido el marco a las imágenes */
+        }
+
+        .photo-holder {
+            background-color: lightgray;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            border: 1px solid #8B0000; /* Añadido el marco a los contenedores de imágenes */
+        }
+
+        .photo-holder span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 10px;
+        }
+
+        .company-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .company-info p {
+            margin: 5px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #555;
         }
     </style>
 </head>
@@ -119,13 +176,15 @@
                     <img src="ruta_de_la_imagen.jpg" alt="Logo">
                 </div>
                 <div class="header-links">
-                    <h3>Header Link 1</h3>
-                    <h3>Header Link 2</h3>
-                    <h3>Header Link 3</h3>
+                    <h3><a href="#">Header Link 1</a></h3>
+                    <h3><a href="#">Header Link 2</a></h3>
+                    <h3><a href="#">Header Link 3</a></h3>
+                    <h3><a href="#">Header Link 4</a></h3> <!-- Nuevo link -->
                 </div>
             </div>
             <div class="description">
                 <p>Descripción de la sección</p>
+                <p class="slogan">Inserta aquí el lema</p>
             </div>
             <div class="image-container">
                 <button class="login-button">Login</button>
@@ -134,14 +193,24 @@
         </div>
         <div class="grid-item">
             <div class="section-title">Título de la sección 2</div>
-            <div class="illustration">Inserta aquí la ilustración</div>
-            <div class="subtext">Subtexto 1</div>
-            <div class="illustration">Inserta aquí la ilustración</div>
-            <div class="subtext">Subtexto 2</div>
-            <div class="illustration">Inserta aquí la ilustración</div>
-            <div class="subtext">Subtexto 3</div>
-            <div class="illustration">Inserta aquí la ilustración</div>
-            <div class="subtext">Subtexto 4</div>
+            <div class="image-container">
+                <div class="photo-holder">
+                    <img src="ruta_imagen_1.jpg" alt="Imagen 1">
+                    <span>Subtexto 1</span>
+                </div>
+                <div class="photo-holder">
+                    <img src="ruta_imagen_2.jpg" alt="Imagen 2">
+                    <span>Subtexto 2</span>
+                </div>
+                <div class="photo-holder">
+                    <img src="ruta_imagen_3.jpg" alt="Imagen 3">
+                    <span>Subtexto 3</span>
+                </div>
+                <div class="photo-holder">
+                    <img src="ruta_imagen_4.jpg" alt="Imagen 4">
+                    <span>Subtexto 4</span>
+                </div>
+            </div>
         </div>
         <div class="grid-item">
             <div class="quote">"Inserta aquí las palabras de la cita"</div>
@@ -154,9 +223,9 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="company-info">
         <p>Nombre de la empresa</p>
-        <p>Sello de copyright</p>
+        <p class="copyright">&copy; Derechos de autor 2023</p>
     </div>
 </body>
 </html>
